@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyRead</title>
+    <link rel="stylesheet" href="css.css">
+
+</head>
+<body>
+    <div class="body">
+
+    
+    <header>
+        <nav class="navbar">
+            <ul>
+                <img src="logo.png" class="logo">
+                <li style="float: left; margin-left: 4vw;"><a class="b" href="#" >Home</a></li>
+                <li><a class="b" href="#footer2" >About</a></li>
+                <li><a class="b" href="#footer3" >Services</a></li>
+                <li><a class="b" href="#footer4" >Contact Us</a></li>
+                <!-- <li style="float: left; margin-left: 4vw; font-size: larger;"><a href="*" target="_blank">Book Collection &#9660;</a></li> -->
+                <div class="login">
+                    <a class="a" href="login.html">Login</a>
+                </div>
+
+                <div class="search">
+                    <input type="search" placeholder="  Search here...">
+                
+                </div>
+            </ul>
+        </nav>
+
+    </header>
+    
+    <!-- <div class="deal_of_the_day">
+
+
+        <img src="jacket.jpg" id="i1">
+        <img src="jacket1.jpg" id="i2">
+        <img src="jacket2.jpg" id="i3">
+        <img src="jacket3.jpg" id="i4">
+        <img src="jacket4.jpg" id="i5">
+        <img src="jacket5.jpg" id="i6">
+    </div> -->
+    <div class="split left">
+        <a href="#bg1">
+        <div class="slideshow-container">
+  
+            <div class="mySlides fade">
+            
+              <img class="slider" src="slider1.jpg" style="width:100%">
+            </div>
+            
+            <div class="mySlides fade">
+              
+              <img class="slider" src="slider2.jpg" style="width:100%">
+            </div>
+            
+            <div class="mySlides fade">
+              
+              <img class="slider" src="discount_image_1.png" style="width:100%">
+
+            </div>
+            
+            </div>
+            <br>
+            
+            <div style="text-align:center">
+              <span class="dot"></span> 
+              <span class="dot"></span> 
+              <span class="dot"></span> 
+            </div>
+        </a>
+            <script>
+            let slideIndex = 0;
+            showSlides();
+            
+            function showSlides() {
+              let i;
+              let slides = document.getElementsByClassName("mySlides");
+              let dots = document.getElementsByClassName("dot");
+              for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+              }
+              slideIndex++;
+              if (slideIndex > slides.length) {slideIndex = 1}    
+              for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+              }
+              slides[slideIndex-1].style.display = "block";  
+              dots[slideIndex-1].className += " active";
+              setTimeout(showSlides, 2000);
+            }
+            </script>
+      </div>
+    <div class="marquee">
+        <h2 id="scroll">
+            <marquee behavior="scroll" direction="right" scrollamount="11">
+                ---DEAL OF THE DAY---</marquee>
+        </h2>
+    </div>
+    </div>
+    <!-- <div class="a1">
+        <img src="book_1.webp" alt="image not found">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio iusto consequuntur corrupti, quod ex quaerat alias accusantium error facere illo numquam praesentium ipsum.</p>
+    </div> -->
+    <!-- <div class="a2">
+
+    </div>
+    <div class="a3">
+
+    </div>
+    <div class="a4">
+
+    </div> -->
+    <div id="bg1">
+        <p>   </p>
+        <div class="container">
+            <div class="blank">
+                <a href="book1.html">
+                <div class="pic1">
+                </div></a>
+                <div class="heading">
+                    <h2>Indian Economy</h2>
+                    <h3>&#8377;349
+                    </h3>
+
+                </div>
+            </div>
+
+            <div class="blank">
+                <a href="book2.html">
+                <div class="pic2">
+
+                </div></a>
+                <div class="heading">
+                    <h2>Ace Banking</h2>
+                    <h3>&#8377;339</h3>
+                </div>
+            </div>
+
+            <div class="blank">
+                <a href="book3.html">
+                <div class="pic3">
+
+                </div></a>
+                <div class="heading">
+                    <h2>Amazing Secrets </h2>
+                    <h3>&#8377;190
+                    </h3>
+                </div>
+            </div>
+
+            <div class="blank">
+                <a href="book4.html">
+                <div class="pic4">
+
+                </div></a>
+                <div class="heading">
+                    <h2>Reasoning </h2>
+                    <h3>&#8377;482</h3>
+                </div>
+            </div>
+
+
+            <div class="blank">
+                <a href="book5.html">
+                <div class="pic5">
+
+                </div></a>
+                <div class="heading">
+                    <h2>Indian Geography </h2>
+                    <h3>&#8377;349</h3>
+                </div>
+            </div>
+
+
+            <div class="blank">
+                <a href="book6.html">
+                <div class="pic6">
+
+                </div></a>
+                <div class="heading">
+                    <h2>Data Interpretation </h2>
+                    <h3>&#8377;375</h3>
+                </div>
+            </div>
+
+
+            <div class="blank">
+                <a href="book7.html">
+                <div class="pic7">
+
+                </div></a>
+                <div class="heading">
+                    <h2>NEET Questions</h2>
+                    <h3>&#8377;436</h3>
+                </div>
+            </div>
+
+
+            <div class="blank">
+                <a href="book8.html">
+                <div class="pic8">
+
+                </div></a>
+                <div class="heading">
+                    <h2>Pathfinder NDA</h2>
+                    <h3>&#8377;415</h3>
+                </div>
+                </div>
+            <div class="blank">
+                <a href="book9.html">
+                <div class="pic9">
+    
+                </div></a>
+                <div class="heading">
+                    <h2>Success Myntra CTET</h2>
+                    <h3>&#8377;329</h3>
+                </div>
+                </div>
+            
+            </div>
+            
+        
+            <div id="footer2">
+                <h3 id="sp1">About US.</h3>
+                <p class="p1">Dear readers, We offer huge collection of   books in diverse category of Fiction,     Non-fiction, Biographies, History,  Religions, Self -Help, Children. We also     sell in vast collection of Investments and  Management, Computers, Engineering, Medical,     College and School text references books    proposed by different institutes as syllabus   across the country. Besides to this, we also  offer a large collection of E-Books at very  fair pricing. We attempt to extend the   customer satisfaction by catering easy    user-friendly search engine, quick and     user-friendly payment options and quicker   delivery systems. Upside to all of this, we   are disposed to provide exciting offers and   pleasant discounts on our books.
+                </p>
+            </div>
+            <div id="footer3">
+                <h3 id="sp2">Services.</h3>
+                <p class="p2">EasyRead offers you over 25 million titles across categories such as Children’s Books, Business & Economics, Indian Writing and Literature & Fiction.
+
+                    Reading books is the favourite pastime of many people. If you’re bitten by the book-bug too, then there is a massive collection of books for you to read. From bestsellers to new & future releases, the choices are exhaustive when you shop online at India's Largest Bookstore.
+                
+                    From books for dummies, to textbooks for students, there are a wide variety of books. You can explore the young adults books store if you’re looking to gift a nice book to a teenager, where you can find books from the best-selling series.</p>
+            </div>
+            <div id="footer4">
+                <h3 id="sp3">Contact Us.</h3>
+                <p class="p3">Gmail  =  ishitaron08@gmail.com
+                </br>
+                Mobile NO  =  9528614140
+                </p>
+            </div>
+    <footer class="footer">
+        <p class="p">Copyright &copy;: @EasyRead</p>
+    </footer>
+</div>
+</body>
+</html>

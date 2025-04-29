@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pathfinder NDA</title>
+</head>
+<style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Roboto:ital,wght@0,100;0,300;1,100&display=swap');
+    body{font-family: 'Roboto', sans-serif;
+        background-image: linear-gradient(#9cc998d0, rgba(40, 51, 82, 0.418)),url(background_3.png);
+    }
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .navbar{
+    background-color: rgba(255, 228, 196, 0.925);
+    border-radius: 5px;
+    position: sticky;
+    width: 98.6vw;
+    height: 12vh;
+    margin-top: px;
+    position: fixed;
+    top: 0;
+    border: 1.4px solid black;
+    border-radius: 50px;
+}
+.navbar li{
+    float: left;
+    list-style: none;
+    padding: 0.9vh 0.1835vw;
+    margin: 3vh 0.55vw;
+    font-size: 145%;
+}
+.navbar .logo{
+    float:left;
+}
+.navbar ul{
+    overflow: auto ;
+}
+.navbar li a{
+    text-decoration: none;
+    /* color: black; */
+}
+.b{
+    color: black;
+}
+
+.search{
+    float: right;
+    margin: 4.4vh 4vw 4.4vh 0vw;
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 0.2vh 0.2vw;
+}
+.navbar .login{
+    float: left;
+    padding: 4vh 1vw 4vh 4vw;
+    color: white;
+    
+}
+.a{
+    text-decoration: none;
+    font-size: 125%;
+    /* border: 2px solid black; */
+    color: black;
+}
+a:hover{
+    color: blue;
+}
+.logo{
+    width: 3cm;
+    height: 1.5cm;
+    margin: 2vh 2vw;
+    border-radius: 20px;
+    text-decoration: none;
+}
+.box{
+    width: 100%;
+    height: 220vh;
+    
+}
+    .main{
+        width: 35vw;
+        height: 87vh;
+        border: 1px solid black;
+        display: inline-block;
+        position:fixed;
+        margin-top: 80px;
+        box-sizing: border-box;
+
+    }
+    .main .img1{
+        height: 330px;
+        padding: 15px 110px 0px 110px;
+        margin-bottom: 0;
+    }
+    .content{
+        clear: right;
+        margin-left: 38vw;
+        padding-top: 7.5vw;
+        height: 200vh;
+
+    }
+    .button {
+        background-color: #a71a1a;
+        border: none;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 10px 100px 0px 100px;
+        padding: 8px 0;
+        cursor: pointer;
+        border-radius: 60%;
+        font-size: 120%;
+        transition: transform 1s;
+    }
+    .button:hover{
+        transform: scale(1.1, 0.8);
+    }
+    .footer{
+        background-color: black;
+        margin-bottom: 0px;
+        clear: both;
+        height: 80px;
+        color: beige;
+    }
+    .content .h1{
+        margin-bottom: 10px;
+    }
+    .content .h2{
+        display: inline-block;
+        margin-right:14px ;
+    }
+    .content .h3{
+        display: inline-block;
+        text-decoration: line-through;
+        margin-right: 11px;
+        color: rgba(128, 128, 128, 0.568);
+    }
+    .content .h4{
+        display: inline-block;
+        color: #a71a1a;
+    }
+    .content .h5{
+        margin-top: 50px;
+        margin-left: 25px;
+        width: auto;
+        height: 30px;
+        display: inline-block;
+    }
+    .content .discription{
+        clear: right;
+        display: inline-block;
+        margin-left: 160px ;
+        display: inline-block;
+        margin-bottom: 40px;
+    }
+    .spec{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 24px 30px;
+        font-size: 24px;
+        font-weight: 500;
+        border: 1px solid black;
+    }
+    .a1{
+        border: 1px solid black;
+        padding: 24px 24px 34px 0px ;
+        font-size: 14px;
+        letter-spacing: -.2px;
+        line-height: 1.4;
+    }
+    .a2{
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+
+    }
+    .a3{
+        box-sizing: border-box;
+    }
+    .a4{
+        padding-bottom: 16px;
+        width: 100%;
+    }
+    .b1{
+        padding: 12px;
+        width: 24%;
+    }
+    .b2{
+        line-height: 1.4;
+        word-break: break-word;
+        width: 75%;
+    }
+    #about{
+        margin-bottom: 0;
+        background-color: rgba(0, 0, 0, 0.822);
+        margin: 30px 0px 0px 0px ;
+        border-radius: 40px;
+    }
+    #about .color{
+        padding: 15px 80px;
+        color: #a71a1a;
+    }
+    #about .para{
+        padding: 15px ;
+        color: rgb(250, 250, 203);
+    }
+    footer{
+    background-color: black;
+    color: aqua;
+    width: 100%;
+    height: 12vh;   
+    text-align: center;
+    }
+    .footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .navbar ul a:hover{
+        border: 2px solid rgb(62, 75, 245);
+        box-shadow: 2px 2px rgb(255, 145, 0);
+        padding: 4px;
+    }
+    
+    </style>
+    <script>
+        function print(a){
+            window.alert("Order Placed")
+        }
+    </script>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <img src="logo.png" class="logo">
+                <li style="float: left; margin-left: 4vw;"><a class="b" href="main.html">Home</a></li>
+                <li><a class="b" href="#about">About</a></li>
+                <li><a class="b" href="main.html">Services</a></li>
+                <li><a class="b" href="main.html">Contact Us</a></li>
+                <!-- <li style="float: left; margin-left: 4vw; font-size: larger;"><a href="*" target="_blank">Book Collection &#9660;</a></li> -->
+                <div class="login">
+                    <a class="a" href="login.html">Login</a>
+                </div>
+
+                <div class="search">
+                    <input type="search" placeholder="  Search here...">
+                
+                </div>
+            </ul>
+        </nav>
+
+    </header>
+
+    <div class="box">
+    <div class="main">
+        <img class="img1" src="book_8.png" alt="Image Not Found">
+        <div class="imp"></div>
+        <div class="button">
+            <p><input type="button" value="Buy Now" class="button" onclick="print()"></p>
+        </div>
+    </div>
+    
+    <div class="content">
+        <h2 class="h1">Pathfinder Nda/Na National Defence Academy & Naval Academy Entrance Examination  (English, Paperback, unknown)</h2>
+        <br>
+        <h1 class="h2">&#8377;415</h1>
+        <h3 class="h3">&#8377;815</h3>
+        <h3 class="h4">49% off</h3>
+        <p>   </p>
+        <h3 class="h5">Discription.</h3>
+        <div class="discription">1. Pathfinder NDA/NA Entrance Examination - prescribed under UPSC Guidelines. 2. The Self Study Guide divides the entire syllabus in 4 Major Sections 3. Provides 5 Previous Years' Solved Papers for practice 4. More than 8000 MCQs for quick revision of topics 5. Chapterwise division of Previous Years' Questions. 6. Gives deep insight of the paper pattern, its types and weightage in the exam. Mark Twain once said, Patriotism is supporting your country all time and government when it deserves it. The Union services commission or UPSC has released the notification of about 413 seats for the NDA/NA exam 2022. Here comes the updated edition of the Pathfinder series NDA/NA Entrance Examination comprehensively complete syllabus of entrance examination as prescribed by UPSC. The book has been divided into chapters that are categorized under 4 major subjects; Mathematics, General English, General Science, General Studies providing a complete coverage. Each chapter of every section has been well explained with proper theories for better understanding. More than 8000 MCQs and Previous Years Solved Papers are providing a deep insight for examination patterns and types of questions asked in the exam. 
+        </div>
+        <div class="spec">Specification</div>
+        <div class="a1">
+            <table class="a2">
+                <tbody class="a3">
+                    <tr class="a4">
+                        <td class="b1">Book</td>
+                        <td class="b2">
+                            <ul>
+                                <li class="c1">	
+
+                                    Pathfinder Nda/Na National Defence Academy & Naval Academy Entrance Examination</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr class="a4">
+                        <td class="b1">Author</td>
+                        <td class="b2">
+                            <ul>
+                                <li class="c1">	Unknown </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr class="a4">
+                        <td class="b1">Binding</td>
+                        <td class="b2">
+                            <ul>
+                                <li class="c1">	
+                                    Paperback</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr class="a4">
+                        <td class="b1">Publishing Date</td>
+                        <td class="b2">
+                            <ul>
+                                <li class="c1">	 2022</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr class="a4">
+                        <td class="b1">Publisher</td>
+                        <td class="b2">
+                            <ul>
+                                <li class="c1">	
+                                    Unknown</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr class="a4">
+                        <td class="b1">Edition</td>
+                        <td class="b2">
+                            <ul>
+                                <li class="c1">	
+                                    2</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr class="a4">
+                        <td class="b1">Exam</td>
+                        <td class="b2">
+                            <ul>
+                                <li class="c1">	
+                                    	Nda and Na </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr class="a4">
+                        <td class="b1">Number of Pages</td>
+                        <td class="b2">
+                            <ul>
+                                <li class="c1">	
+                                    	450</li>
+                            </ul>
+                        </td>
+                    </tr><tr class="a4">
+                        <td class="b1">Language</td>
+                        <td class="b2">
+                            <ul>
+                                <li class="c1">	
+                                    		English</li> 
+                            </ul>
+                        </td>
+                    </tr><tr class="a4">
+                        <td class="b1">Genre</td>
+                        <td class="b2">
+                            <ul>
+                                <li class="c1">	
+                                    		History</li>
+                            </ul>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <div id="about">
+            <h2 class="color">About US.</h2>
+        <p class="para">Dear readers,
+
+            We offer huge collection of books in diverse category of Fiction, Non-fiction, Biographies, History, Religions, Self -Help, Children. We also sell in vast collection of Investments and Management, Computers, Engineering, Medical, College and School text references books proposed by different institutes as syllabus across the country. Besides to this, we also offer a large collection of E-Books at very fair pricing.
+            
+            We attempt to extend the customer satisfaction by catering easy user-friendly search engine, quick and user-friendly payment options and quicker delivery systems. Upside to all of this, we are disposed to provide exciting offers and pleasant discounts on our books.
+            
+            </p>
+        </div>
+
+    </div>
+    <div class="footer">
+    <footer class="footer">
+        CopyRight &copy; @EasyRead
+    </footer>
+</div>
+</div>
+</div>
+</body>
+</html>

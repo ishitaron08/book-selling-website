@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+    margin: 0px;
+    padding: 0px;
+    height: 87vh;
+    background-image: linear-gradient(rgba(0, 0, 255, 0.103), rgba(0, 225, 255, 0.089)),url(login_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.nav{
+    border: 2px solid black;
+    font-size: 50px;
+    text-align: center;
+    margin-top: 80px;
+    background-color: bisque;
+    /* background-image: linear-gradient(to right top, #d16ba5, #dc6197, #e45787, #eb4d75, #ee4660, #ed4e52, #ea5744, #e56136, #dd7432, #d58534, #cc933c, #c3a049); */
+    position: relative;
+    animation-name: bounce;
+    animation-duration: 15s;
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
+    40% {transform: translateY(-150px);} 
+    60% {transform: translateY(-150px);} 
+ } 
+#log{
+    font-size: 30px;
+    color: bisque;
+    text-align: center;
+
+}
+
+
+.form{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 22px;
+    margin-left: 488px;
+    color: bisque;
+}
+#a{margin-left: 69px;}
+#b{margin-left: 76px;}
+#c{margin-left: 49px;}
+#d{margin-left: 27px;}
+#e{margin-left: 67px;}
+#f{margin-left: 33px;}
+#i{
+    margin: 20px 107px;
+}
+#i:hover{
+    background-color: bisque;
+}
+    </style>
+</head>
+<script>
+    function print(a){
+        window.alert("Form Submitted")
+    }
+</script>
+
+<body>
+    <div class="nav">
+        <p>EasyRead</p>
+    </div>
+    <div class="sign">
+        <p id="log">Sign In</p>
+    </div>
+    <div class="form">
+        <form>
+            Name : <input type="text" name="FirstName" id="a"><br>
+            DOB : <input type="date" name="FirstName" id="b"><br>
+            Country :<input type="text" name="" id="c"><br>
+            Phone No. : <input type="number" name="" id="d"><br>
+            Email : <input type="email" name="" id="e"><br>
+            Password : <input type="password" name="" id="f"><br>
+            <input type="reset" value="Submit" id="i" onclick="print()">
+        </form>
+    </div>
+</body>
+</html>

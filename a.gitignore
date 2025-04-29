@@ -1,0 +1,11 @@
+# Ignore node_modules (if it's a NodeJS project)
+node_modules/
+
+# Ignore Docker local stuff
+*.log
+*.tmp
+.dockerignore
+docker-compose.override.yml
+
+# Ignore environment variables
+.env
