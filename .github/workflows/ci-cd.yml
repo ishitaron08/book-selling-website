@@ -1,32 +1,35 @@
-name: CI/CD Pipeline for Book-Selling Website
+name: Test & Docker Backup Pipeline
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+on: [push]
 
 jobs:
-  build-and-push:
+  test-and-backup:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout Code
-      uses: actions/checkout@v3
+    - uses: actions/checkout@v4
+    
+    # Node.js setup and tests
+    - name: Set up Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: 22
+    
+    - name: Install dependencies
+      run: npm install
+      
+    - name: Build project
+      run: npm run build
 
-    - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v3
-
-    - name: Login to DockerHub
+    # Docker build and push
+    - name: Login to Docker Hub
       uses: docker/login-action@v3
       with:
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-    - name: Build and Push Docker Image
-      uses: docker/build-push-action@v5
-      with:
-        context: .
-        push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/book-selling-website:latest
- 
+        username: ${{ secrets.DOCKER_HUB_USERNAME }}
+        password: ${{ secrets.DOCKER_HUB_TOKEN }}
+      
+    - name: Build & Push Docker Image
+      run: |
+        docker build -t ${{ secrets.DOCKER_HUB_USERNAME }}/portfolio:latest .
+        docker push ${{ secrets.DOCKER_HUB_USERNAME }}/portfolio:latest
+        docker tag ${{ secrets.DOCKER_HUB_USERNAME }}/portfolio:latest ${{ secrets.DOCKER_HUB_USERNAME }}/portfolio:${{ github.sha }}
+        docker push ${{ secrets.DOCKER_HUB_USERNAME }}/portfolio:${{ github.sha }}
