@@ -20,10 +20,8 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Build & Push Docker Image
-      run: |
-        docker build -t ${{ secrets.DOCKER_USERNAME }}/portfolio:latest .
-        docker push ${{ secrets.DOCKER_USERNAME }}/portfolio:latest
-        docker tag ${{ secrets.DOCKER_USERNAME }}/portfolio:latest ${{ secrets.DOCKER_USERNAME }}/portfolio:${{ github.sha }}
-        docker push ${{ secrets.DOCKER_USERNAME }}/portfolio:${{ github.sha }}
-
-    
+  run: |
+    docker buildx build --platform linux/amd64 \
+      -t ${{ secrets.DOCKER_USERNAME }}/portfolio:latest \
+      -t ${{ secrets.DOCKER_USERNAME }}/portfolio:${{ github.sha }} \
+      --push .
