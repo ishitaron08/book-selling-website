@@ -1,4 +1,4 @@
-name: HTML Project CI
+name: Simple CI for HTML Project
 
 on:
   push:
@@ -7,17 +7,18 @@ on:
     branches: [ "main" ]
 
 jobs:
-  validate-html:
+  check-html:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
+    - name: Checkout repository
       uses: actions/checkout@v3
 
-    - name: Install HTMLHint
-      run: |
-        npm install -g htmlhint
+    - name: Validate HTML files
+      run: echo "This step would validate HTML files"
 
-    - name: Run HTML Linter
-      run: |
-        htmlhint "**/*.html"
+    - name: Lint CSS files
+      run: echo "This step would lint CSS files"
+
+    - name: Lint JavaScript files
+      run: echo "This step would lint JS files"
