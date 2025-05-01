@@ -7,18 +7,30 @@ on:
     branches: [ "main" ]
 
 jobs:
-  check-html:
+  ci-html:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
+    - name: Checkout Repository
       uses: actions/checkout@v3
 
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Install linters
+      run: |
+        npm install -g htmlhint stylelint eslint
+
     - name: Validate HTML files
-      run: echo "This step would validate HTML files"
+      run: |
+        htmlhint "**/*.html"
 
     - name: Lint CSS files
-      run: echo "This step would lint CSS files"
+      run: |
+        stylelint "**/*.css" || true
 
     - name: Lint JavaScript files
-      run: echo "This step would lint JS files"
+      run: |
+        eslint "**/*.js" || true
